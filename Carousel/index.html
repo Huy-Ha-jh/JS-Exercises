@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="photo-gallery">
+    <!-- Main photo display -->
+    <div class="main-photo-container">
+      <img id="main-photo" class="main-photo" src="/Carousel/images/image1.png" alt="Main Photo">
+    </div>
+
+    <!-- Thumbnail list -->
+    <div class="thumbnail-container">
+      <img class="thumbnail" src="/Carousel/images/image1.png" alt="Thumbnail 1" onclick="changeImage('/Carousel/images/image1.png')">
+      <img class="thumbnail" src="/Carousel/images/image2.png" alt="Thumbnail 2" onclick="changeImage('/Carousel/images/image2.png')">
+      <img class="thumbnail" src="/Carousel/images/image3.png" alt="Thumbnail 3" onclick="changeImage('/Carousel/images/image3.png')">
+      <img class="thumbnail" src="/Carousel/images/image4.png" alt="Thumbnail 4" onclick="changeImage('/Carousel/images/image4.png')">
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="navigation">
+      <button id="prev" onclick="prevImage()">❮</button>
+      <button id="next" onclick="nextImage()">❯</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

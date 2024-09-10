@@ -1,26 +1,27 @@
 
 //Ex 2: Given an array of integers, find integers with the most repetitions. If multiple numbers have the same maximum number of repetition, export all of them.
 //Maximum 3 rounds, not nested.
+let arr = [2, 3, 3, 5, 3, 4, 1, 7]; 
+let n = arr.length; 
+let k = 8; 
 
-  const arr = [1, 2, 2, 3, 4, 4, 4, 5, 5, 5, 6];
+  function maxRepeating(arr, n, k) { 
+    for (let i = 0; i< n; i++) 
+        arr[arr[i]%k] += k; 
+ 
+    let max = arr[0], result = 0; 
+    for (let i = 1; i < n; i++) 
+    { 
+        if (arr[i] > max) 
+        { 
+            max = arr[i]; 
+            result = i; 
+        } 
+    } 
+ 
+    return result; 
+} 
 
-  const findMostRepetitions = (arr) => {
-    // Step 1: Count occurrences of each number
-    const countMap = arr.reduce((count, num) => {
-      count[num] = (count[num] || 0) + 1;
-      return count;
-    }, {});
 
-    // Step 2: Find the maximum occurrence
-    const maxCount = Math.max(...Object.values(countMap));
 
-    // Step 3: Filter numbers that have the maximum count
-    const mostRepeatedNumbers = Object.keys(countMap)
-      .filter(num => countMap[num] === maxCount)
-      .map(Number); // Convert back to numbers since Object.keys returns strings
-    
-    return mostRepeatedNumbers;
-  };
-
-  const result = findMostRepetitions(arr);
-  console.log(result); // Output: [4, 5]
+console.log("The maximum repeating number is " + maxRepeating(arr, n, k))

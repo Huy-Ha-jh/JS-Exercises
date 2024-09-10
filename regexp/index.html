@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email & Password Validation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Email & Password Validation</h2>
+  
+  <form id="validationForm">
+    <label for="email">Email</label>
+    <input class="text" type="text" id="email" placeholder="Enter your email">
+    <div id="emailError" class="error">Invalid email format</div>
+
+    <label for="password">Password</label>
+    <input class="text" type="password" id="password" placeholder="Enter your password">
+    <div id="passwordError" class="error">Password must be at least 8 characters, include 1 uppercase letter, 1 number, and 1 special character.</div>
+
+    <!-- Show password checkbox -->
+    <label>
+      <div class="show-password">
+        <input  type="checkbox" id="showPassword">
+        <span> Show Password</span>
+      </div> 
+      
+    </label>
+
+    <button type="submit">Submit</button>
+    
+    <div  id="validMessage" class="valid-message">Email and password are valid!</div>
+  </form>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
