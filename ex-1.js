@@ -19,15 +19,33 @@ console.log("Solution 2: ", removeDuplicatesWithSet(arr));
 
 // Solution 3: Using a for loop
 function removeDuplicatesWithForLoop(arr) {
-  let unique = [];
+  const unique = [];
   arr.forEach(element => {
       if (!unique.includes(element)) {
           unique.push(element);
+          // unique = [...unique, element];
       }
   });
   return unique;
 }
 console.log("Solution 3: ", removeDuplicatesWithForLoop(arr));
 
+// const asyncFnc = async (a) =>{
+//   await apiCall();
+//   // return Promise.resolve(a);
+// };
 
+// const boo = async () => {
+//   for (let i = 0; i < arr.length; i++) {
+//     await asyncFnc(arr[i]);
+//     console.log(arr[i])
+//   }
+// }
+
+// const boo1 = async () => {
+//   arr.forEach(async e => {
+//     await asyncFnc(e);
+//     console.log(e)
+//   });
+// }
 

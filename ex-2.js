@@ -1,9 +1,9 @@
 
 //Ex 2: Given an array of integers, find integers with the most repetitions. If multiple numbers have the same maximum number of repetition, export all of them.
 //Maximum 3 rounds, not nested.
-let arr = [2, 3, 3, 5, 3, 4, 1, 7]; 
-let n = arr.length; 
-let k = 8; 
+const arr = [2, 4, 4, 5, 3, 4, 1, 7]; 
+const n = arr.length; 
+const k = 8; 
 
   function maxRepeating(arr, n, k) { 
     for (let i = 0; i< n; i++) 
@@ -21,7 +21,5 @@ let k = 8;
  
     return result; 
 } 
-
-
 
 console.log("The maximum repeating number is " + maxRepeating(arr, n, k))

@@ -5,10 +5,13 @@ const images = [
   "/Carousel/images/image3.png", 
   "/Carousel/images/image4.png"
 ];
+
+
 let currentIndex = 0;
 
 
 function changeImage(imageSrc) {
+  
   const mainPhoto = document.getElementById('main-photo');
   
 
