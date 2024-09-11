@@ -1,37 +1,46 @@
-// List of images for the gallery
-const images = [
-  "/Carousel/images/image1.png", 
-  "/Carousel/images/image2.png", 
-  "/Carousel/images/image3.png", 
-  "/Carousel/images/image4.png"
-];
+(function() {
+  const images = [
+    "/Carousel/images/image1.png", 
+    "/Carousel/images/image2.png", 
+    "/Carousel/images/image3.png", 
+    "/Carousel/images/image4.png"
+  ];
 
+  let currentIndex = 0;
 
-let currentIndex = 0;
+  // Function to change the main image
+  function changeImage(imageSrc) {
+    const mainPhoto = document.getElementById('main-photo');
+    
+    currentIndex = images.indexOf(imageSrc);
+    
+    mainPhoto.style.opacity = 0; 
+    setTimeout(() => {
+      mainPhoto.src = imageSrc;
+      mainPhoto.style.opacity = 1; 
+    }, 500); 
+  }
 
+  // Previous image navigation
+  function prevImage() {
+    currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+    changeImage(images[currentIndex]);
+  }
 
-function changeImage(imageSrc) {
-  
-  const mainPhoto = document.getElementById('main-photo');
-  
+  // Next image navigation
+  function nextImage() {
+    currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+    changeImage(images[currentIndex]);
+  }
 
-  currentIndex = images.indexOf(imageSrc);
-  
-  mainPhoto.style.opacity = 0; 
-  setTimeout(() => {
-    mainPhoto.src = imageSrc;
-    mainPhoto.style.opacity = 1; 
-  }, 500); 
-}
+  // Event listeners for thumbnails
+  document.querySelectorAll('.thumbnail').forEach((thumbnail, index) => {
+    thumbnail.addEventListener('click', function() {
+      changeImage(images[index]);
+    });
+  });
 
-
-function prevImage() {
-  currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-  changeImage(images[currentIndex]);
-}
-
-
-function nextImage() {
-  currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-  changeImage(images[currentIndex]);
-}
+  // Attach event listeners to prev/next buttons
+  document.getElementById('prev').addEventListener('click', prevImage);
+  document.getElementById('next').addEventListener('click', nextImage);
+})();
