@@ -7,27 +7,27 @@ const images = [
 ];
 let currentIndex = 0;
 
-// Change main photo by clicking a thumbnail
+
 function changeImage(imageSrc) {
   const mainPhoto = document.getElementById('main-photo');
   
-  // Update the currentIndex to match the clicked image
+
   currentIndex = images.indexOf(imageSrc);
   
-  mainPhoto.style.opacity = 0; // Fade out animation
+  mainPhoto.style.opacity = 0; 
   setTimeout(() => {
     mainPhoto.src = imageSrc;
-    mainPhoto.style.opacity = 1; // Fade in animation
-  }, 500); // Timing should match CSS transition duration
+    mainPhoto.style.opacity = 1; 
+  }, 500); 
 }
 
-// Show previous image
+
 function prevImage() {
   currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
   changeImage(images[currentIndex]);
 }
 
-// Show next image
+
 function nextImage() {
   currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
   changeImage(images[currentIndex]);
